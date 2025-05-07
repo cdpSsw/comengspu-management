@@ -1,0 +1,245 @@
+@use "../../var";
+
+.client-team-container {
+  width: 100%;
+  height: auto;
+  padding: 3vw 8vw;
+  // background: red;
+
+  .top-container {
+    
+    .topic {
+      color: var.$white;
+    }
+
+    .desc {
+      width: 50%;
+      color: var.$light-grey;
+    }
+  }
+
+  .desktop.content-container {
+    @include var.center-content;
+    align-items: flex-start;
+
+    .content-card {
+      .content-img {
+        cursor: pointer;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        aspect-ratio: 3 / 5;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      .text-container {
+        padding: 16px 8px;
+        text-align: end;
+
+        .position,
+        .name {
+          margin: 0;
+        }
+
+        .name {
+          color: var.$white;
+          font-size: 18px;
+        }
+
+        .position {
+          color: var.$light-grey;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  .client-preview-info {
+    @include var.center-content;
+    flex-direction: column;
+    text-align: start;
+    padding: 24px;
+
+    .hr-line {
+      width: 100%;
+      height: 0.5px;
+      background: var.$light-grey;
+      margin: 16px 0;
+    }
+
+    .content-img {
+      width: 40% !important;
+    }
+    .personal-info-container {
+      // background: darkblue;
+      text-align: center;
+      margin-top: 16px;
+
+      .position,
+      .name {
+        margin: 0;
+      }
+      .name {
+        font-size: 24px;
+      }
+    }
+
+    .edu-container,
+    .expt-container,
+    .exp-container,
+    .research-container {
+      // background: red;
+      width: 100%;
+      color: black;
+
+      .edu-topic,
+      .expt-topic,
+      .exp-topic,
+      .research-topic {
+        color: var.$btn_danger1;
+      }
+    }
+
+    .expt-container {
+      margin-left: -64px;
+    }
+
+    .contact-container-team {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  .preview-topic{
+    // background: red;
+    margin: 0;
+  }
+
+  .mobile,
+  .btn-prev-next-container {
+    display: none;
+  }
+}
+
+// -------------------- top -desc size ----------------------------------------
+@media screen and (max-width: 1150px) {
+  .client-team-container {
+    .top-container {
+      .desc {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .client-team-container {
+    .top-container {
+      .desc {
+        font-size: 14px !important;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// -------------------- card -position, name size ----------------------------------------
+@media screen and (max-width: 936px) {
+  .client-team-container {
+    .content-container {
+      .content-card {
+        .text-container {
+          .name {
+            font-size: 14px !important;
+          }
+          .position {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------------------- mobile size ----------------------------------------
+@media screen and (max-width: 720px) {
+  .client-team-container {
+    .desktop {
+      display: none !important;
+    }
+
+    .btn-prev-next-container{
+        display: flex !important;
+        margin-bottom: 16px;
+        .btn {
+            margin: 0 4px;
+            font-size: 24px;
+            color: var.$white;
+            background: none;
+            border: 1px solid var.$white;
+            border-radius: 50%;
+            transition: all 0.3s ease-out;
+    
+            &:hover {
+              color: black;
+              background: var.$white;
+              box-shadow: 0 0 6px var.$white;
+            }
+          }
+      }
+
+    .mobile.content-container {
+      display: flex !important;
+
+      .swiper {
+        .swiper-slide {
+          .content-card {
+            .swiper-img {
+              width: 100%;
+            }
+
+            .text-container {
+              padding: 24px;
+              padding-bottom: 40px;
+
+              .position,
+              .name {
+                margin: 0;
+              }
+
+              .position {
+                font-size: 18px;
+                color: var.$light-grey;
+              }
+
+              .name {
+                font-size: 24px !important;
+                color: var.$white;
+              }
+            }
+          }
+        }
+
+        .swiper-pagination-bullet {
+          margin-top: 24px;
+          background: var.$btn_danger1;
+          transition: all 0.3s ease-out;
+        }
+
+        .swiper-pagination-bullet-active {
+          width: 30px;
+          border-radius: 3px;
+          background: linear-gradient(
+            90deg,
+            var.$btn_danger1,
+            var.$btn_danger2
+          );
+        }
+      }
+    }
+  }
+}

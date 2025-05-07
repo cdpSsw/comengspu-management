@@ -1,0 +1,158 @@
+@use "../../var.scss";
+
+.contact-container {
+  width: 100%;
+  // min-height: 70vh;
+  height: auto;
+  color: var.$white;
+  // background: var.$white;
+
+  .content-container {
+    position: relative;
+    padding: 3vw 8vw;
+    overflow: hidden;
+    // background: var.$white;
+
+    .contact-deatils {
+      padding-right: 6vw;
+
+      .desc {
+        font-size: 12px;
+        color: var.$light-grey;
+      }
+
+      .contact-box-container {
+        .contact-box {
+          display: flex;
+          margin: 8px;
+          padding: 8px 12px;
+          background: none;
+          align-items: center;
+          border: 1px solid var.$dim_white;
+          border-radius: 8px;
+
+          i{
+            font-size: 16px;
+            color: var.$white;
+            background: var.$black;
+            border-radius: 3px;
+            margin-right: 16px;
+          }
+
+          .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+            justify-content: center;
+            text-align: start;
+
+            .title-box,
+            .desc-box {
+              margin: 0;
+            }
+
+            .title-box {
+              font-size: 1.2vw;
+              width: 100%;
+            }
+            .desc-box {
+              font-size: 0.9vw;
+            }
+          }
+        }
+
+        .address {
+          ion-icon {
+            font-size: 22px;
+            padding: 8px 12px;
+          }
+        }
+      }
+    }
+
+    .vl {
+      position: absolute;
+      border-left: 1px solid var.$black;
+      height: 500px;
+      left: 47%;
+    }
+
+    .get-in-touch {
+      hr {
+        width: 30%;
+      }
+
+      .input-box,
+      .send-mess-btn {
+        position: relative;
+        width: 80%;
+
+        input,
+        textarea{
+            &:focus{
+                box-shadow: none;
+                
+            }
+        }
+      }
+
+      .send-mess-btn {
+        cursor: pointer;
+        padding: 8px 0;
+        color: var.$white;
+        background: var.$black;
+        border: 1px solid var.$black;
+        border-radius: 8px;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          color: var.$black;
+          background-color: transparent;
+        }
+
+        &:disabled{
+            background: var.$dim_white;
+            border: 1px solid var.$dim_white;
+
+            &:hover { color: var.$white; }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .contact-container {
+    .content-container {
+      padding-top: 50px;
+      
+      .contact-deatils {
+        .contact-box-container {
+          .contact-box {
+            width: 250px !important;
+
+            .text-container {
+              .title-box {
+                font-size: 14px !important;
+              }
+              .desc-box {
+                font-size: 12px !important;
+              }
+            }
+          }
+        }
+      }
+
+      .vl {
+        display: none !important;
+      }
+
+      .get-in-touch {
+        .input-box,
+        .send-mess-btn {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

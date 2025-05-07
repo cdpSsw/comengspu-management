@@ -1,0 +1,78 @@
+@use "../../var.scss";
+
+.user-showtiktok-container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  
+  .top-container {
+    padding: 2vw 14vw;
+
+    .topic {
+      color: var.$white;
+    }
+    .desc {
+      color: var.$dim_white;
+    }
+  }
+  .not-found-container {
+    @include var.center-content;
+    // background: darkblue;
+
+    .svg-not-found {
+      height: 70vh;
+    }
+  }
+
+  .content-container {
+    @include var.center-content;
+    width: 100%;
+
+    .content-card-container {
+      // background: var.$white;
+      width: 325px;
+      aspect-ratio: 1 / 2.5;
+      margin-bottom: 32px;
+      overflow: hidden;
+      height: auto;
+
+      .content-card {
+        background: var.$white;
+        width: 325px !important;
+        height: auto;
+
+        .content-tiktok {
+          blockquote {
+            height: 630px !important;
+          }
+        }
+
+        .text-container {
+          @include var.center-content;
+          flex-direction: column;
+          width: 325px !important;
+          height: auto;
+          text-align: start;
+          padding: 16px;
+
+          .id {
+            margin: 0;
+            color: var.$light-grey;
+          }
+
+          .topic{
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .user-showtiktok-container {
+    padding-top: 80px;
+  }
+}
+

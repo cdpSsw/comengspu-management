@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofia+Sans+Semi+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+
+$topic-headers: #020202;
+$black: #020202;
+$icons: #353535;
+$white: #fff;
+$dim_white: #d2d2d2;
+$bg-active: #f3f7ff;
+$bg-content: #f3f3f3;
+$lines: #d2d2d2;
+
+$light-grey: #979797;
+
+$btn_success1: #13b35d;
+$btn_success2: #e5f9ee;
+$btn_waiting1: #f2a028;
+$btn_waiting2: #fdf8e7;
+$btn_update1: #0093fe;
+$btn_update2: #e7f3ff;
+$btn_danger1: #bf2c38;
+$btn_danger2: #fae2e4;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Sans Semi Condensed", "Prompt", sans-serif;
+  // background: $topic-headers;
+}
+
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.notFoundImg {
+  height: 12vw;
+}
+.notFoundImg-home {
+  height: 50vh;
+}
+.not-found-page {
+  height: 60vh;
+}
+// .not-found-tools-hist{ width: 100vw; }
+
+.nf-login-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .notFoundImg-login {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .nf-login-container {
+    .notFoundImg-login {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .nf-login-container {
+    .notFoundImg-login {
+      width: 250px;
+    }
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  white-space: pre;
+  font-size: 30px;
+  line-height: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+  color: white;
+  // background: red;
+  width: 100%;
+  text-align: center;
+}
+.loader:before {
+  content: "Loading...\A⌰oading...\A⌰⍜ading...\A⌰⍜⏃ding...\A⌰⍜⏃⎅ing...\A⌰⍜⏃⎅⟟ng...\A⌰⍜⏃⎅⟟⋏g...\A⌰⍜⏃⎅⟟⋏☌...\A⌰⍜⏃⎅⟟⋏☌⟒..\A⌰⍜⏃⎅⟟⋏☌⟒⏁.\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔";
+  white-space: pre;
+  display: inline-block;
+  animation: l39 1s infinite steps(11) alternate;
+}
+
+@keyframes l39 {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.btn-appv-all{
+  color: $btn_success2;
+  background: $btn_success1;
+  border: 1px $btn_success1 solid !important;
+
+  &:hover{
+    color: $btn_success1 !important;
+    background: $btn_success2 !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn-appv-all:disabled {
+  color: white;
+  background: gray !important;
+  border: 1px solid gray !important;
+}

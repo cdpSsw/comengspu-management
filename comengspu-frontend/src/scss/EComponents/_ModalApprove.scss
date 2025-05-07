@@ -1,0 +1,72 @@
+@use "../var";
+
+.modal-approve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 1vw 0;
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: var.$btn_success1;
+    background: var.$btn_success2;
+    border-radius: 50%;
+  }
+
+  .topic {
+    color: var.$btn_success1;
+    font-style: italic;
+  }
+
+  .desc > span {
+    color: var.$btn_success1;
+  }
+
+  .btn-container {
+    .btn {
+      color: var.$btn_success1;
+      background: var.$btn_success2;
+      border: 1px solid var.$btn_success2;
+      border-radius: 32px;
+      margin: 0 3px;
+      transition: all 0.3s ease-out;
+    }
+
+    .btn-cancel{
+      color: var.$topic-headers;
+      background: none;
+      border: 1px solid var.$dim_white;
+
+      &:hover {
+        color: var.$white;
+        background: var.$topic-headers;
+        border: 1px solid var.$topic-headers;
+        box-shadow: 0 0 6px var.$topic-headers;
+      }
+    }
+
+    .btn-approve {
+      &:hover {
+        color: var.$btn_success2;
+        background: var.$btn_success1;
+        border: 1px solid var.$btn_success1;
+        box-shadow: 0 0 6px var.$btn_success1;
+      }
+    }
+  }
+}
+
+.btn-appv-all:enabled{
+  &:hover{
+    color: var.$white;
+    background: var.$topic-headers;
+    border: 1px solid var.$topic-headers;
+    box-shadow: 0 0 6px var.$topic-headers;
+  }
+}

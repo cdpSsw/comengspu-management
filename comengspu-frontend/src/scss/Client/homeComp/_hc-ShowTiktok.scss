@@ -1,0 +1,151 @@
+@use "../../var.scss";
+
+.client-showTiktok-container{
+  width: 100%;
+  height: 1040px;
+  position: relative;
+  padding: 8vw 0;
+  overflow: hidden;
+  
+  .top-container{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+
+    .topic{ 
+      color: var.$white;
+    }
+
+    .desc-container{
+      @include var.center-content;
+      // background: saddlebrown;
+
+      .desc{ 
+        width: 50%;
+        color: var.$light-grey;
+        // background: salmon;
+      }
+    }
+  }
+  
+  .desktop.content-container{
+    position: absolute;
+    @include var.center-content;
+    width: 100%;
+    z-index: 3;
+    bottom: 0;
+
+    .content-tiktok {
+      blockquote {
+        width: 325px !important;
+        height: 725px !important;
+      }
+    }
+  }
+
+  .mobile.content-container{ display: none; }
+
+  .orb-container {
+    // background: red;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50vw;
+    bottom: 50px;
+
+  }
+
+  .particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// -------------------------------- mobile size --------------------------------------------
+@media screen and (max-width: 1200px) {
+  .client-showTiktok-container{
+    height: 1050px;
+
+    .top-container{
+      .topic{ 
+        font-size: 26px;
+      }
+    }
+
+    .desktop.content-container{ display: none; }
+    .mobile.content-container{
+      display: flex;
+      position: absolute;
+      @include var.center-content;
+      width: 100%;
+      z-index: 3;
+      bottom: 0;
+
+      .swiper{
+        .swiper-slide{
+          .content-card {
+            height: auto;
+    
+            .content-tiktok {
+
+              blockquote {
+                width: 325px !important;
+                // height: 630px !important;
+              }
+            }
+          }
+          
+        }
+        .swiper-pagination-bullet {
+          margin-top: 24px;
+          background: var.$btn_danger1;
+          transition: all 0.3s ease-out;
+        }
+
+        .swiper-pagination-bullet-active {
+          width: 30px;
+          border-radius: 3px;
+          background: linear-gradient(
+            90deg,
+            var.$btn_danger1,
+            var.$btn_danger2
+          );
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------- top -desc ----------------------------------------
+@media screen and (max-width: 720px) {
+  .client-showTiktok-container{
+    height: 900px;
+    margin: 64px 0;
+
+    .top-container{
+      .desc-container{ 
+        display: none;
+      }
+    }
+
+    .orb-container{ display: none; }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .client-showTiktok-container{
+    height: 90vh;
+    padding: 0 !important;
+
+    .swiper{
+      .swiper-slide{
+        .content-card{
+          .content-tiktok{
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@use "../../var.scss";
+
+
+.client-showcase-container {
+  // @include var.center-content;
+  // flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 0 8vw;
+  
+  .top-container {
+    @include var.center-content;
+    justify-content: space-between;
+    text-align: start;
+    
+    .top-left {
+      .topic {
+        color: var.$white;
+      }
+
+      .desc {
+        width: 85%;
+        color: var.$light-grey;
+      }
+    }
+
+    .top-right {
+      @include var.center-content;
+
+      .btn {
+        margin: 0 4px;
+        font-size: 24px;
+        color: var.$white;
+        background: none;
+        border: 1px solid var.$white;
+        border-radius: 50%;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          color: black;
+          background: var.$white;
+          box-shadow: 0 0 6px var.$white;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    margin-top: 24px;
+
+    .swiper {
+      @include var.center-content;
+
+      .swiper-slide {
+        .content-img {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          object-position: top;
+        }
+
+        .text-container {
+          text-align: start;
+          margin-bottom: 3vw;
+
+          .topic-container,
+          .desc-container {
+            overflow: hidden;
+
+            .topic {
+              color: var.$btn_danger1;
+              margin: 0;
+              margin-top: 16px;
+            }
+
+            .desc {
+              color: var.$light-grey;
+            }
+          }
+        }
+      }
+
+      .swiper-pagination-bullet {
+        margin-top: 24px;
+        background: var.$btn_danger1;
+        transition: all 0.3s ease-out;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 30px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var.$btn_danger1, var.$btn_danger2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .client-showcase-container {
+    padding: 0 4vw;
+
+    .top-container {
+      flex-direction: column;
+      text-align: start;
+      margin-bottom: 16px;
+
+      .top-left {
+        width: 100%;
+        .topic {
+          font-size: 28px;
+        }
+
+        .desc {
+          font-size: 14px;
+          line-height: 24px;
+          width: 100%;
+        }
+      }
+
+      .top-right {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 16px;
+      }
+    }
+  }
+}

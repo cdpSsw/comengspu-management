@@ -1,0 +1,64 @@
+@use '../../var';
+
+.hc-footer-container{
+    @include var.center-content;
+    flex-direction: column;
+    width: 100%;
+    height: 380px;
+    color: var.$white;
+
+    .btn-container{
+        margin-top: 16px;
+        // background: red;
+
+        .btn{
+            color: var.$white;
+            border: none;
+            position: relative;
+        
+            &::before{
+                position: absolute;
+                bottom: 0;
+                content: '';
+                width: 0%;
+                height: .5px;
+                background: red;
+                transition: all .3s ease-out;
+            }
+
+            &:hover{
+                color: red;
+
+                &::before{
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+    .hr{
+        background: var.$white;
+        width: 30%;
+        height: .5px;
+        margin: 24px 0;
+    }
+
+    .btn-social-container{
+        .social{
+            text-decoration: none;
+            color: var.$white;
+            background: none;
+            border: 1px solid var.$white;
+            border-radius: 32px;
+            margin: 0 4px;
+            padding: 6px 16px;
+            transition: all .3s ease-out;
+
+            &:hover{
+                background: red;
+                border: 1px solid red;
+                box-shadow: 0 0 6px red;
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+@use "../var";
+
+.a-main-container {
+  width: 100%;
+  background: var.$bg-active;
+  overflow-x: hidden;
+
+  .desktop-view {
+    position: fixed;
+    width: 15%;
+    height: 100vh;
+    background: var.$white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .emblem-container > .emblem {
+      height: 80px;
+    }
+
+    .nav-container {
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        gap: 12px;
+
+        .nav-link {
+          cursor: pointer;
+          width: fit-content;
+          display: inline;
+          font-size: 16px;
+          padding: 8px 24px;
+          border-radius: 32px;
+          transition: all 0.3s ease-out;
+
+          &:hover {
+            background: var.$bg-active;
+          }
+
+          .link-name {
+            margin-left: 16px;
+          }
+        }
+
+        .nav-link.active {
+          font-weight: 600;
+          background: var.$bg-active;
+          // background: red;
+        }
+      }
+    }
+  }
+
+  .select-comp-container {
+    width: 85%;
+    margin-left: 15%;
+    overflow-x: hidden;
+    background: var.$bg-content;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1555px) {
+  .a-main-container {
+    .desktop-view {
+      width: 85px;
+
+      .emblem-container > .emblem {
+        height: 60px;
+      }
+
+      .nav-container {
+        .link-name {
+          display: none;
+        }
+
+        .nav-link.active {
+          border-radius: 50%;
+          padding-top: 14px;
+          padding-bottom: 18px;
+        }
+      }
+    }
+  }
+
+  .select-comp-container {
+    width: 100% !important;
+    margin-left: 60px !important;
+  }
+}
+
+@media (max-width: 930px) {
+  .a-main-container {
+    .desktop-view {
+      display: none;
+    }
+
+    .select-comp-container {
+      width: 100% !important;
+      margin-left: 0% !important;
+    }
+
+    .mobile-view {
+      background: var.$white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      .emblem-container {
+        .emblem {
+          height: 60px !important;
+        }
+      }
+
+      .container {
+        .navbar-toggler {
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        .navbar-collapse {
+          .navbar-nav {
+            .nav-item {
+              margin-bottom: 16px;
+
+              .nav-link {
+                cursor: pointer;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                  background: var.$bg-active;
+                }
+
+                .nav-icon {
+                  margin-right: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

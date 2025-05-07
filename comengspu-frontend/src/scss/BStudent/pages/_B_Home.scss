@@ -1,0 +1,468 @@
+@use "../../var";
+
+.stu-home-container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 2vw 8vw;
+
+  .topic {
+    margin-bottom: 24px;
+  }
+
+  .content-container {
+    padding: 24px;
+    border-radius: 16px;
+    background: var.$white;
+    margin: 16px 0;
+    width: 100%;
+
+    .top-container {
+      display: flex;
+      justify-content: space-between;
+
+      .topic {
+        margin-bottom: 16px;
+      }
+
+      .btn-container {
+        @include var.center-content;
+
+        .btn {
+          padding: 6px 16px;
+          border: 1px solid var.$topic-headers;
+          border-radius: 8px;
+          transition: all 0.3s ease-out;
+        }
+
+        .btn-add-new {
+          background: none;
+          margin-right: 16px;
+
+          &:hover {
+            color: var.$white;
+            background: var.$topic-headers;
+            box-shadow: 0 0 3px var.$topic-headers;
+          }
+        }
+      }
+    }
+
+    .showcase-container {
+      .showcase-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        width: 100%;
+        justify-content: flex-start;
+
+        .showcase-card {
+          width: 22%;
+          cursor: pointer;
+          background: var.$white;
+          border-radius: 16px;
+          margin: 16px 0;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+          .showcase-img {
+            width: 100%;
+            border-radius: 16px 16px 0 0;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top;
+          }
+
+          .text-container {
+            padding: 8px 16px;
+            margin-top: 8px;
+
+            .status {
+              cursor: pointer;
+              padding: 3px 6px;
+              border-radius: 3px;
+              background: red;
+
+              i {
+                margin-right: 8px;
+              }
+            }
+
+            .status.Approved {
+              color: var.$btn_success1;
+              background: var.$btn_success2;
+              border: 1px solid var.$btn_success2;
+            }
+
+            .status.Waiting {
+              color: var.$btn_waiting1;
+              background: var.$btn_waiting2;
+              border: 1px solid var.$btn_waiting2;
+            }
+
+            .id,
+            .topic,
+            .desc {
+              margin: 0;
+            }
+
+            .id {
+              font-size: 14px;
+              color: var.$dim_white;
+            }
+            .topic {
+              font-size: 24px;
+            }
+            .desc {
+              color: var.$light-grey;
+            }
+          }
+
+          .edit-del-container {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px;
+
+            .btn {
+              transition: all 0.3s ease-out;
+            }
+
+            .btn-update {
+              color: var.$btn_update1;
+              background: var.$btn_update2;
+              border: 1px solid var.$btn_update2;
+
+              &:hover {
+                color: var.$btn_update2;
+                background: var.$btn_update1;
+                border: 1px solid var.$btn_update1;
+                box-shadow: 0 0 3px var.$btn_update1;
+              }
+            }
+
+            .btn-del {
+              color: var.$btn_danger1;
+              background: var.$btn_danger2;
+              border: 1px solid var.$btn_danger2;
+              margin-left: 8px;
+
+              &:hover {
+                color: var.$btn_danger2;
+                background: var.$btn_danger1;
+                border: 1px solid var.$btn_danger1;
+                box-shadow: 0 0 3px var.$btn_danger1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .showtiktok-card {
+      @include var.center-content;
+      flex-direction: column;
+      text-align: start;
+      cursor: pointer;
+      margin: 16px 0;
+      border-radius: 16px;
+      border: 1px solid var.$dim_white;
+      overflow: hidden;
+
+      .showtiktok-tiktok {
+        width: 325px;
+        overflow: hidden;
+      }
+
+      .text-container {
+        width: 100%;
+        padding: 0 38px;
+
+        .status {
+          cursor: pointer;
+          padding: 3px 6px;
+          border-radius: 3px;
+
+          i {
+            margin-right: 8px;
+          }
+        }
+
+        .status.Approved {
+          color: var.$btn_success1;
+          background: var.$btn_success2;
+          border: 1px solid var.$btn_success2;
+        }
+
+        .status.Waiting {
+          color: var.$btn_waiting1;
+          background: var.$btn_waiting2;
+          border: 1px solid var.$btn_waiting2;
+        }
+
+        .id,
+        .topic,
+        .desc {
+          margin: 0;
+        }
+
+        .id {
+          margin: 0;
+          margin-top: 8px;
+          font-size: 14px;
+          color: var.$dim_white;
+        }
+        .topic {
+          font-size: 24px;
+          margin-top: 8px;
+        }
+        .desc {
+          color: var.$light-grey;
+        }
+      }
+
+      .edit-del-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px 48px;
+
+        .btn {
+          transition: all 0.3s ease-out;
+        }
+
+        .btn-update {
+          color: var.$btn_update1;
+          background: var.$btn_update2;
+          border: 1px solid var.$btn_update2;
+
+          &:hover {
+            color: var.$btn_update2;
+            background: var.$btn_update1;
+            border: 1px solid var.$btn_update1;
+            box-shadow: 0 0 3px var.$btn_update1;
+          }
+        }
+
+        .btn-del {
+          color: var.$btn_danger1;
+          background: var.$btn_danger2;
+          border: 1px solid var.$btn_danger2;
+          margin-left: 8px;
+
+          &:hover {
+            color: var.$btn_danger2;
+            background: var.$btn_danger1;
+            border: 1px solid var.$btn_danger1;
+            box-shadow: 0 0 3px var.$btn_danger1;
+          }
+        }
+      }
+    }
+  }
+
+  // Modal
+  // ... Add + Update
+  .form {
+    padding: 16px;
+
+    .topic {
+      text-align: center;
+      font-style: italic;
+    }
+
+    .preview-image {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .btn-container {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        transition: all 0.3s ease-out;
+      }
+
+      .btn-cancel {
+        color: var.$btn_danger1;
+        background: var.$btn_danger2;
+        border: 1px solid var.$btn_danger2;
+        margin-left: 8px;
+
+        &:hover {
+          color: var.$btn_danger2;
+          background: var.$btn_danger1;
+          border: 1px solid var.$btn_danger1;
+          box-shadow: 0 0 3px var.$btn_danger1;
+        }
+      }
+
+      .btn-add {
+        color: var.$btn_success2;
+        background: var.$btn_success1;
+        border: 1px solid var.$btn_success1;
+        margin-left: 8px;
+
+        &:hover {
+          color: var.$btn_success2;
+          background: var.$btn_success1;
+          border: 1px solid var.$btn_success1;
+          box-shadow: 0 0 3px var.$btn_success1;
+        }
+      }
+
+      .btn-update {
+        color: var.$btn_update1;
+        background: var.$btn_update2;
+        border: 1px solid var.$btn_update2;
+        margin-left: 8px;
+
+        &:hover {
+          color: var.$btn_update2;
+          background: var.$btn_update1;
+          border: 1px solid var.$btn_update1;
+          box-shadow: 0 0 3px var.$btn_update1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .stu-home-container {
+    .content-container {
+      .showcase-container {
+        .showcase-card-container  > .showcase-card {
+          box-sizing: border-box;
+          width: 32%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  .stu-home-container {
+    .content-container {
+      .showcase-container {
+        .showcase-card-container  > .showcase-card {
+          box-sizing: border-box;
+          width: 48%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .stu-home-container {
+    .content-container {
+      .showcase-container {
+        .showcase-card-container  > .showcase-card {
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .stu-home-container {
+    padding-top: 85px;
+
+    .showTikok-container {
+      .top-container {
+        .btn-container {
+          width: 150px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 669px) {
+  .stu-home-container {
+    .showTikok-container {
+      .top-container {
+        .btn-container {
+          width: 170px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .stu-home-container {
+    .showTikok-container {
+      .top-container {
+        display: flex;
+        flex-direction: column;
+        .btn-container {
+          width: 110px !important;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .stu-home-container {
+    .content-container {
+      .top-container {
+        .btn-container {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .stu-home-container {
+    .content-container {
+      .top-container {
+        .btn-container {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .stu-home-container {
+    .showtiktok-card {
+      width: 120%;
+      margin-left: -30px !important;
+      // background: red;
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .stu-home-container {
+    .content-container {
+      .top-container {
+        display: flex;
+        flex-direction: column;
+        .btn-container {
+          width: 110px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stu-home-container {
+    .showtiktok-card {
+      width: 140%;
+      margin-left: -50px !important;
+      // background: red;
+    }
+  }
+}

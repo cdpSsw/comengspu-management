@@ -1,0 +1,88 @@
+@use "../../var.scss";
+
+.viewer-yt-container {
+  width: 100%;
+//   min-height: 80vh;
+  height: auto;
+  overflow-x: hidden;
+  padding: 2vw 14vw;
+
+  .top-container {
+    .topic {
+      color: var.$white;
+    }
+    .desc {
+      color: var.$dim_white;
+    }
+  }
+
+  .content-container {
+    @include var.center-content;
+    align-items: flex-start;
+    justify-content: flex-start;
+    // background: red;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 24px;
+
+    .card-container {
+      width: 32%;
+      margin: 6px;
+
+      .content-card {
+        border: 1px solid var.$dim_white;
+
+        iframe {
+          width: 99.9%;
+        }
+      }
+    }
+
+    .text-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //   background: red;
+      border-top: 0;
+      padding: 32px 0;
+
+      .id {
+        margin: 0;
+        font-size: 14px;
+        color: var.$dim_white;
+      }
+      .topic {
+        font-size: 24px;
+        color: var.$white;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// ----------------- content ----------------------------
+@media screen and (max-width: 1117px) {
+  .viewer-yt-container {
+    .content-container {
+      .card-container {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .viewer-yt-container {
+    .content-container {
+      .card-container {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .viewer-yt-container {
+    padding-top: 80px;
+  }
+}

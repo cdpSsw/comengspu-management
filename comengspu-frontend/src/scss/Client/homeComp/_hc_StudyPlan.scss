@@ -1,0 +1,305 @@
+@use "../../var.scss";
+
+.studyPlan-container {
+  @include var.center-content;
+  flex-direction: column;
+  color: var.$white;
+  background: var.$black;
+  height: auto;
+  width: 100%;
+  margin: 64px 0;
+
+  .hr {
+    width: 80px;
+    height: 1px;
+    background: var.$white;
+    margin: 32px 0;
+  }
+
+  .hr2 {
+    width: 90vw;
+    height: .1px;
+    background: var.$white;
+    margin: 84px 0 0 0;
+  }
+
+  .studyPlan-box {
+    // background: red;
+
+    .topic-container,
+    .desc-container {
+      @include var.center-content;
+      flex-direction: column;
+      overflow: hidden;
+      height: auto;
+
+      .topic {
+        width: 450px;
+        font-size: 32px;
+      }
+
+      .desc {
+        width: 53%;
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 32px;
+      }
+    }
+  }
+  
+  .word {
+    display: inline-block;
+  }
+
+  .degree-careerp-container{
+    margin-top: 32px !important;
+    text-align: start;
+    width: 100%;
+    padding: 24px;
+    // background: red;
+
+    .degree-container{
+      @include var.center-content;
+      flex-direction: column;
+      // background: darkblue;
+      
+      .topic{ font-size: 22px; }
+      h5{ font-weight: 400;}
+    }
+
+    .careerp-container {
+      @include var.center-content;
+      flex-direction: column;
+      text-align: start;
+      padding: 32px 0;
+
+      .swiper {
+        width: 80%;
+        margin: 24px 0;
+
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+
+          i{ font-size: 32px; }
+
+          .card-spotlight{
+            width: 500px;
+            height: 250px;
+            
+            .career-path{
+              margin-top: 8px;
+            }
+
+            .career-desc{
+              font-size: 17px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+
+      .swiper-pagination-bullet {
+        margin-top: 24px;
+        background: var.$btn_danger1;
+        transition: all 0.3s ease-out;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 30px;
+        border-radius: 3px;
+        background: linear-gradient(
+          90deg,
+          var.$btn_danger1,
+          var.$btn_danger2
+        );
+      }
+    }
+    
+  }
+
+  .box-type {
+    @include var.center-content;
+
+    .hashtag,
+    .type {
+      margin: 0;
+      padding: 8px 16px;
+      font-size: 16px;
+      background: var.$btn_danger1;
+      border: 1px solid var.$btn_danger1;
+    }
+
+    .hashtag {
+      border-radius: 50%;
+      font-style: italic;
+    }
+
+    .type {
+      margin-left: 8px;
+      border-radius: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .studyPlan-container {
+    // background: darkblue;
+    align-items: flex-start;
+    padding: 0 3vw;
+
+    .studyPlan-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .topic-container,
+      .desc-container{
+        text-align: start
+      }
+
+      .desc-container {
+        .desc {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .degree-careerp-container{
+      width: 100% !important;
+
+      .degree-container{
+        align-items: flex-start;
+        text-align: start;
+        // background: red;
+        padding: 0 0vw;
+        
+        .topic{ font-size: 18px; }
+        h5{ font-size: 16px; }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .studyPlan-container {
+    .studyPlan-box {
+      .topic-container,
+      .desc-container {
+        .topic { 
+          width: 320px !important;
+          font-size: 24px !important; 
+        
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .studyPlan-container{
+    .degree-careerp-container{
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 770px){
+  .studyPlan-container{
+    .studyPlan-box{
+      .topic{
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+// -------------------------- swiper-card -------------------------
+@media screen and (max-width: 585px) {
+  .studyPlan-container{
+    .degree-careerp-container{
+      .careerp-container{
+        .swiper{
+          .swiper-slide{
+            .card-spotlight{
+
+              i{ font-size: 16px; }
+              .career-path{ font-size: 3vw; }
+              .career-desc{ font-size: 2.6vw; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .studyPlan-container{
+    .degree-careerp-container{
+      .careerp-container{
+        .swiper{
+          .swiper-slide{
+            .card-spotlight{
+              
+              width: 500px;
+              height: 200px ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .studyPlan-container{
+    .degree-careerp-container{
+      .careerp-container{
+        .swiper{
+          width: 100%;
+          
+          .swiper-slide{
+            .card-spotlight{
+              height: 220px;
+
+              .career-path{ font-size: 16px; }
+              .career-desc{ font-size: 14px; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.card-spotlight {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid #222;
+  background-color: #111;
+  padding: 2rem;
+  overflow: hidden;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.05);
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.6;
+}
