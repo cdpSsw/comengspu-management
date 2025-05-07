@@ -6,8 +6,8 @@ require('dotenv').config();
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'comen.spu@gmail.com',
-    pass: 'rsltbjhrruvpjzrw',
+    user: process.env.CONTACT_MAIL,
+    pass: process.env.CONTACT_PASS,
   },
 });
 
@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
 
     const mailOptions = {
       from: email,
-      to: 'comen.spu@gmail.com',
+      to: process.env.CONTACT_MAIL,
       subject: `Get In Touch From CPE-Website : ${name} / ${email}`,
       text: message,
     };
